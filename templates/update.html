@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+<h3>Hos geldiniz</h3>
+<div class="row">
+    <div class="col-md-6 offset-md-3"> 
+     {% comment %} bootstapin bu class-ni responsivligi nezere almaq ucun istifade etmiwem  {% endcomment %}
+        <h3>Makale guncelle</h3>
+        <hr>
+        <form method = "post">
+            {% csrf_token %}
+            {{ form.media }}
+            {{form|crispy}}
+            <br>
+            <button type = "submit" class = "btn btn-danger">guncelle</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
